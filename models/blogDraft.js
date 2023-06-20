@@ -13,7 +13,7 @@ const BlogDraftSchema = new mongoose.Schema(
       required: true,
     },
     categoryList: {
-      type: [CategorySchema], // Array of CategorySchema objects
+      type: [CategorySchema], 
       required: true,
       default: [],
     },
