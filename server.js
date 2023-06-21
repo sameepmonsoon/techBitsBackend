@@ -7,8 +7,7 @@ const blogPostRoutes = require("./routes/blogPostRoutes.js");
 const blogReactionRoutes = require("./routes/blogReactionRoutes");
 const bodyParser = require("body-parser");
 dotenv.config();
-
-// express app
+const PORT = 8000;
 const app = express();
 
 // connect to the database
@@ -25,7 +24,6 @@ const connect = () => {
     .catch((err) => {
       console.error("Error connecting to MongoDB database:", err.message);
       process.exit(1);
-      // Exit the process with a non-zero status code to indicate failure
     });
 };
 app.use(bodyParser.json({ limit: "10mb" }));
@@ -37,7 +35,7 @@ app.use("/auth", authRoutes);
 app.use("/blogPost", blogPostRoutes);
 app.use("/blogReact", blogReactionRoutes);
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
   connect();
-  console.log("Listening on port 8000");
+  console.log("Listening on port", PORT);
 });

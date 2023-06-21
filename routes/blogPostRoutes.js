@@ -12,7 +12,6 @@ const {
 
 const router = express.Router();
 
-// Create a blog
 router.post("/create", createBlogPost);
 router.post("/:id/comment", createBlogPost);
 router.post("/createDraft", createBlogDraft);
