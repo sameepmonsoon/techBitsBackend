@@ -213,7 +213,6 @@ exports.getAllBookmark = async (req, res) => {
   }
 };
 
-//optimized by gpt
 exports.follow = async (req, res) => {
   try {
     const { userId, followerId } = req.body;
