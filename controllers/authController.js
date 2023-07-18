@@ -249,3 +249,16 @@ exports.follow = async (req, res) => {
     res.status(500).json({ error: "Failed to update following status" });
   }
 };
+
+exports.allUser = async (req, res) => {
+  try {
+    const userList = await User.find();
+    if (Object.keys(userList).length < 0) {
+      res.status(200).json({ erros: "No data" });
+    }
+
+    res.status(200).json({ message: "success", userList });
+  } catch (err) {
+    res.status(500).json({ error: "failed to fetch the user list" });
+  }
+};

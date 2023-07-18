@@ -7,6 +7,7 @@ const {
   follow,
   getAllBookmark,
   updateProfile,
+  allUser,
 } = require("../controllers/authController.js");
 
 const router = express.Router();
@@ -18,5 +19,6 @@ router.put("/bookmark", bookmark);
 router.post("/getBookmark", getAllBookmark);
 router.put("/follow", follow);
 router.put("/updateProfile", updateProfile);
+router.get("/allUser", allUser);
 
 module.exports = router;
